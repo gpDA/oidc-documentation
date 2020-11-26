@@ -119,7 +119,9 @@ Very useful to grap the basic ideas of how oidc-client works
 
 ## If you are keep struggling
 
-Make sure if you actually know 3 tokens "id_token, access_token, refresh_token"
+Make sure if you understand 3 tokens "id_token, access_token, refresh_token"
+
+https://auth0.com/blog/securing-single-page-applications-with-refresh-token-rotation/
 
 ## I found out that
 
@@ -133,9 +135,7 @@ access_token expires but refresh_token has not yet expired
 access_token_lifeTime < `silent_refresh_token` > refresh_token_lifeTime
 ```
 
-for example,
-if the access_token sets 15 minutes & refresh_token sets 1 hour,
+Refresh tokens allow the client to obtain more access tokens without needing the user to re-authenticate
 
-silent_refresh_token fires every 15 minutes 
-(when the access token expires) for an hour (until refresh_token) expires
+In other words, the refresh token is a longer lived token that may have a lifetime up to many years
 
